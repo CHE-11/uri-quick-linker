@@ -1,12 +1,7 @@
 # URI Quick Linker
 URI Quick Linker is a fast way to copy and paste URI links in your project. This makes it easy to make a way to link to a specific page in your project from a different page.
 
-https://github.com/CHE-11/uri-quick-linker/assets/57516026/bd9e0116-6e73-48ca-9bb5-5b68116ce66
-
-<div style="display: flex; flex-direction: row; justify-content: center;">
-  <iframe src="https://github.com/CHE-11/uri-quick-linker/assets/57516026/bd9e0116-6e73-48ca-9bb5-5b68116ce664" width="550" height="600"></iframe>
-</div>
-
+https://github.com/CHE-11/uri-quick-linker/assets/57516026/c086b7c7-dbc0-40bc-be0e-68a306ec9416
 
 ## Usage
 The extension gives you two options on the right click context menu: 
