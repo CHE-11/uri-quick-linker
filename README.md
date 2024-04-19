@@ -16,7 +16,7 @@ There are three settings that can be changed:
 - uriQuickLinker.fileTypes : object - Set different prefix and suffixs for different file types
 
 ## Development
-To work on the extension, simple copy the repo, and run ```yarn install``` to install the dependencies. Then run the VS Code command ```Start Debugging``` to start the extension in a new window.
+To work on the extension, simple clone the repo, and run ```yarn install``` to install the dependencies. Then run the VS Code command ```Start Debugging``` to start the extension in a new window.
 
 ## Acknowlegements
 
