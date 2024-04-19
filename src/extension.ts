@@ -141,14 +141,12 @@ function copyCurrentFilePathWithCurrentLineNumber(markdown: boolean = false, inc
 	const protocol = useVSCodeInsiders ? 'vscode-insiders' : 'vscode';
 
 	const url = `${protocol}://file${path}:${lineNumber}${includeColumn ? `:${columnNumber}` : ''}`;
-	// return markdown ? `[${relativePath}:${lineNumber}${includeColumn ? `:${columnNumber}` : ''}](${url})` : url;
 	let output = markdown ? `[${relativePath}:${lineNumber}${includeColumn ? `:${columnNumber}` : ''}](${url})` : url;
 
 	const selectedText = editor.document.getText(editor.selection);
-	// Should probably ignore `includeHighlightedTextAsCodeBlock` if we are returning the raw URL?
+  
 	if (includeHighlightedTextAsCodeBlock && selectedText.length) {
 		const codeBlock = "```" + document.languageId + "\n" + selectedText + "\n```";
-		// TODO: optionally de-indent to the appropriate (minimum) level
 		output += "\n" + codeBlock;
 	}
 

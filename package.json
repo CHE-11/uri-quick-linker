@@ -2,7 +2,7 @@
   "name": "uri-quick-linker",
   "displayName": "URI Quick Linker",
   "description": "",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "license": "MIT",
   "icon": "images/icon.png",
   "repository": {
@@ -26,6 +26,11 @@
           "type": "boolean",
           "default": false,
           "description": "Use VS Code Insiders as the default URI scheme"
+        },
+        "uriQuickLinker.includeColumn": {
+          "type": "boolean",
+          "default": true,
+          "description": "Include the column number in the URI"
         },
         "uriQuickLinker.fileTypes": {
           "type": "object",

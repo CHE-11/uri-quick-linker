@@ -3,6 +3,8 @@ URI Quick Linker is a fast way to copy, paste, and jump to URI links in your pro
 
 https://github.com/CHE-11/uri-quick-linker/assets/57516026/c086b7c7-dbc0-40bc-be0e-68a306ec9416
 
+View Demo Video @ [https://github.com/CHE-11/uri-quick-linker/assets/57516026/c086b7c7-dbc0-40bc-be0e-68a306ec9416](https://github.com/CHE-11/uri-quick-linker/assets/57516026/c086b7c7-dbc0-40bc-be0e-68a306ec9416) if you cannot see the video above. 
+
 
 ## Usage
 The extension gives you two options on the right click context menu: 
@@ -11,13 +13,17 @@ The extension gives you two options on the right click context menu:
 - Format Commented URI's
   - Sometimes the extension glitches and doesn't turn the URI into a link. This option will format the URI into a link.
 
+
 ## Config
 There are three settings that can be changed: 
 - uriQuickLinker.useVSCodeInsiders : boolean - Set to true if you use a vscode insider build
+- uriQuickLinker.includeColumn : boolean - Set to true if you want to include the column number in the URI
 - uriQuickLinker.fileTypes : object - Set different prefix and suffixs for different file types
+
 
 ## Development
 To work on the extension, simple clone the repo, and run ```yarn install``` to install the dependencies. Then run the VS Code command ```Start Debugging``` to start the extension in a new window.
+
 
 ## Packaging
 If you don't have vsce install already, run ```npm install -g vsce``` to install it. 
