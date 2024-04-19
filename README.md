@@ -3,6 +3,7 @@ URI Quick Linker is a fast way to copy and paste URI links in your project. This
 
 https://github.com/CHE-11/uri-quick-linker/assets/57516026/c086b7c7-dbc0-40bc-be0e-68a306ec9416
 
+
 ## Usage
 The extension gives you two options on the right click context menu: 
 - Copy URI and Line Number
@@ -18,8 +19,12 @@ There are three settings that can be changed:
 ## Development
 To work on the extension, simple clone the repo, and run ```yarn install``` to install the dependencies. Then run the VS Code command ```Start Debugging``` to start the extension in a new window.
 
-## Acknowlegements
+## Packaging
+If you don't have vsce install already, run ```npm install -g vsce``` to install it. 
+Then run ```vsce package``` to create a .vsix file. You can then install this file in VS Code by running the command ```Extensions: Install from VSIX...``` in the command palette.
 
+
+## Acknowlegements
 My extension is heavily based off [Elliot Betancourt's Extension - hipdot-vs-code-url-scheme-grabber](https://github.com/ebetancourt/hipdot-vs-code-url-scheme-grabber/tree/main?tab=readme-ov-file) which is heavily based off the hardwork of [Nisanth Chunduru's Extension - vscode-copy-filepath-with-line-number](https://github.com/nisanthchunduru/vscode-copy-filepath-with-line-number).
 
 Big thanks to both!
