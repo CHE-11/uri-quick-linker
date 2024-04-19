@@ -3,6 +3,11 @@
   "displayName": "URI Quick Linker",
   "description": "",
   "version": "1.0.0",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CHE-11/uri-quick-linker.git"
+  },
   "engines": {
     "vscode": "^1.88.0"
   },
