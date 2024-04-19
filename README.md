@@ -1,5 +1,5 @@
 # URI Quick Linker
-URI Quick Linker is a fast way to copy and paste URI links in your project. This makes it easy to make a way to link to a specific page in your project from a different page.
+URI Quick Linker is a fast way to copy, paste, and jump to URI links in your project. This makes it easy to make a way to link to a specific page in your project from a different page.
 
 https://github.com/CHE-11/uri-quick-linker/assets/57516026/c086b7c7-dbc0-40bc-be0e-68a306ec9416
 
