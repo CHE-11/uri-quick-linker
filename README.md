@@ -20,7 +20,7 @@ To work on the extension, simple copy the repo, and run ```yarn install``` to in
 
 ## Acknowlegements
 
-My extension is heavily based off [Elliot Betancourt's Extension - hipdot-vs-code-url-scheme-grabber](https://github.com/ebetancourt/hipdot-vs-code-url-scheme-grabber/tree/main?tab=readme-ov-file) which is heavily based off the hardwork of Nisanth Chunduru:[nisanthchunduru/vscode-copy-filepath-with-line-number](https://github.com/nisanthchunduru/vscode-copy-filepath-with-line-number): VSCode extension to copy current file's full path with current line number.
+My extension is heavily based off [Elliot Betancourt's Extension - hipdot-vs-code-url-scheme-grabber](https://github.com/ebetancourt/hipdot-vs-code-url-scheme-grabber/tree/main?tab=readme-ov-file) which is heavily based off the hardwork of [Nisanth Chunduru's Extension - vscode-copy-filepath-with-line-number](https://github.com/nisanthchunduru/vscode-copy-filepath-with-line-number).
 
 Big thanks to both!
 
