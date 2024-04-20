@@ -23,6 +23,7 @@ There are three settings that can be changed:
 - uriQuickLinker.includeColumn : boolean - Set to true if you want to include the column number in the URI
 - uriQuickLinker.fileTypes : object - Set different prefix and suffixs for different file types
 - uriQuickLinker.linkColor : string - Format should included the # if you want to use a hex color. 
+- uriQuickLinker.showLinkIcon : boolean - Set to true if you want to show a link icon next to the URI
 
 
 ## Development
