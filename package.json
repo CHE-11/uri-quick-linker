@@ -134,7 +134,7 @@
       },
       {
         "command": "extension.formatUriAsLink",
-        "title": "Format Commented URI's"
+        "title": "Format URI's"
       }
     ],
     "menus": {

@@ -7,9 +7,11 @@ View Demo Video @ [https://github.com/CHE-11/uri-quick-linker/assets/57516026/c0
 
 
 ## Usage
-The extension gives you two options on the right click context menu: 
+The extension gives you three options on the right click context menu: 
 - Copy URI and Line Number
 - Paste Commented URI
+- Format URI's
+
 
 There is another option in the command palette:
 - Format Commented URI's - Sometimes the extension glitches and doesn't turn the URI into a link. This option will format the URI into a link.
