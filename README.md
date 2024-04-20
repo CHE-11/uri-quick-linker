@@ -32,7 +32,7 @@ To work on the extension, simple clone the repo, and run ```yarn install``` to i
 
 ## Packaging
 If you don't have vsce install already, run ```npm install -g vsce``` to install it. 
-Then run ```vsce package``` to create a .vsix file. You can then install this file in VS Code by running the command ```Extensions: Install from VSIX...``` in the command palette.
+Then run ```vsce package``` to create a .vsix file. You can then install this file in VS Code by running the command ```Extensions: Install from VSIX...``` in the command palette or right clicking on the file in vscode and selecting ```Install Extension VSIX```.
 
 
 ## Acknowlegements
