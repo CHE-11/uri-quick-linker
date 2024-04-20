@@ -35,6 +35,10 @@ If you don't have vsce install already, run ```npm install -g vsce``` to install
 Then run ```vsce package``` to create a .vsix file. You can then install this file in VS Code by running the command ```Extensions: Install from VSIX...``` in the command palette or right clicking on the file in vscode and selecting ```Install Extension VSIX```.
 
 
+## Limitations
+The links don't change their references when the referenced file is moved, edited, renamed, or deleted. This is a limitation of the extension. Maybe at some point I would like to make it watch for changes and update the links accordingly. But for now, it is what it is.
+
+
 ## Acknowlegements
 My extension is heavily based off [Elliot Betancourt's Extension - hipdot-vs-code-url-scheme-grabber](https://github.com/ebetancourt/hipdot-vs-code-url-scheme-grabber/tree/main?tab=readme-ov-file) which is heavily based off the hardwork of [Nisanth Chunduru's Extension - vscode-copy-filepath-with-line-number](https://github.com/nisanthchunduru/vscode-copy-filepath-with-line-number).
 
