@@ -10,8 +10,9 @@ View Demo Video @ [https://github.com/CHE-11/uri-quick-linker/assets/57516026/c0
 The extension gives you two options on the right click context menu: 
 - Copy URI and Line Number
 - Paste Commented URI
-- Format Commented URI's
-  - Sometimes the extension glitches and doesn't turn the URI into a link. This option will format the URI into a link.
+
+There is another option in the command palette:
+- Format Commented URI's - Sometimes the extension glitches and doesn't turn the URI into a link. This option will format the URI into a link.
 
 
 ## Config
@@ -19,6 +20,7 @@ There are three settings that can be changed:
 - uriQuickLinker.useVSCodeInsiders : boolean - Set to true if you use a vscode insider build
 - uriQuickLinker.includeColumn : boolean - Set to true if you want to include the column number in the URI
 - uriQuickLinker.fileTypes : object - Set different prefix and suffixs for different file types
+- uriQuickLinker.linkColor : string - Format should included the # if you want to use a hex color. 
 
 
 ## Development

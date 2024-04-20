@@ -54,15 +54,30 @@ export function activate(context: vscode.ExtensionContext) {
   
 
   let formatLinks = vscode.commands.registerCommand('extension.formatUriAsLink', async () => {
+    resetDecorations();
     updateDecorations(vscode.window.activeTextEditor!)
   });
 
+
+
+  // get the config for the link color and icon
+  const config = vscode.workspace.getConfiguration('uriQuickLinker');
+  const linkColor = config.get('linkColor');
+  const showLinkIcon = config.get('showLinkIcon');
+
+  // set the link color
   const linkDecorator = vscode.window.createTextEditorDecorationType({
     textDecoration: 'underline', // Underline to indicate a link
     cursor: 'pointer', // Cursor style as a pointer
-    color: '#3778ae' // Text color as blue to mimic a hyperlink
+    color: linkColor ?? '#0000FF', // Default link color
   });
 
+  function rangeKey(range: vscode.Range) {
+    // Generates a unique key for a range object
+    return `Range(${range.start.line},${range.start.character},${range.end.line},${range.end.character})`;
+  }
+
+  const existingDecorations = new Map();
 
   function updateDecorations(editor: vscode.TextEditor) {
     if (!editor) {
@@ -77,49 +92,68 @@ export function activate(context: vscode.ExtensionContext) {
 
     let match;
     while ((match = linkPattern.exec(text)) !== null) {
+
       const uri = match[1];
       const startPos = document.positionAt(match.index);
       const endPos = document.positionAt(match.index + match[0].length);
+      const range = new vscode.Range(startPos, endPos);
+      const key = rangeKey(range);
+
+      if (existingDecorations.has(key)) {
+        // console.log('Decoration already exists for range: ', key);
+        continue; // Skip this loop iteration if decoration already exists
+      } else {
+        // console.log('Decoration does not exist for range: ', key);
+      }
 
       const messageMarkdown = new vscode.MarkdownString(`[Open File: ${uri}](command:extension.handleLinkClick?${encodeURIComponent(JSON.stringify(uri))})`);
       messageMarkdown.supportHtml = true;
       messageMarkdown.isTrusted = true;
 
       const decoration = {
-        range: new vscode.Range(startPos, endPos),
+        range: range,
         hoverMessage: messageMarkdown,
         renderOptions: { 
           after: {
-            contentText: '🔗',
-            color: 'blue'
+            contentText: showLinkIcon ? '🔗' : '',
           }
         },
         command: 'extension.handleLinkClick',
         arguments: [uri]
       };
+
+      existingDecorations.set(key, true);
       linkDecorations.push(decoration);
     }
     if (linkDecorations.length > 0) editor.setDecorations(linkDecorator, linkDecorations);
   }
 
+
+  // Reset stored decorations if necessary, e.g., on document close or window change
+  function resetDecorations() {
+    existingDecorations.clear();
+  }
+
   // Initial update if an editor is active
   if (vscode.window.activeTextEditor) {
+    resetDecorations();
     updateDecorations(vscode.window.activeTextEditor);
   }
 
-  // Handle active editor changes
   vscode.window.onDidChangeActiveTextEditor(editor => {
     if (editor) {
+      resetDecorations();
       updateDecorations(editor);
     }
   }, null, context.subscriptions);
-
-  // Handle document content changes
+  
   vscode.workspace.onDidChangeTextDocument(event => {
     if (vscode.window.activeTextEditor && event.document === vscode.window.activeTextEditor.document) {
+      resetDecorations();
       updateDecorations(vscode.window.activeTextEditor);
     }
   }, null, context.subscriptions);
+
 
   context.subscriptions.push(disposable, pasteDisposable, formatLinks, handleLinkClickCommand);
 }
@@ -158,8 +192,6 @@ async function pasteURI(editor: vscode.TextEditor): Promise<string> {
   const config = vscode.workspace.getConfiguration('uriQuickLinker');
   const fileTypes = config.get<{ [key: string]: { prefix: string; suffix: string } }>('fileTypes');
 
-  console.log('fileTypes', fileTypes)
-
 
   if (!fileTypes) {
     vscode.window.showErrorMessage('No file types configured');
@@ -186,3 +218,5 @@ async function pasteURI(editor: vscode.TextEditor): Promise<string> {
   return `${prefix} URI: ${uri} ${suffix}`;
 
 }
+
+

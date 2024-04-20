@@ -2,7 +2,7 @@
   "name": "uri-quick-linker",
   "displayName": "URI Quick Linker",
   "description": "",
-  "version": "1.0.2",
+  "version": "1.0.5",
   "license": "MIT",
   "icon": "images/icon.png",
   "repository": {
@@ -27,6 +27,16 @@
           "default": false,
           "description": "Use VS Code Insiders as the default URI scheme"
         },
+        "uriQuickLinker.linkColor": {
+          "type": "string",
+          "default": "#3778ae",
+          "description": "The color of the URI link"
+        },
+        "uriQuickLinker.showLinkIcon": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show the link icon next to the URI"
+        },
         "uriQuickLinker.includeColumn": {
           "type": "boolean",
           "default": true,
@@ -47,21 +57,21 @@
               "prefix": "//",
               "suffix": ""
             },
-            "js": {
+            "javascript": {
               "prefix": "//",
               "suffix": ""
             },
             "javascriptreact": {
-              "prefix": "{*",
-              "suffix": "*}"
+              "prefix": "//",
+              "suffix": ""
+            },
+            "typescript": {
+              "prefix": "//",
+              "suffix": ""
             },
             "typescriptreact": {
               "prefix": "//",
               "suffix": ""
-            },
-            "tsx": {
-              "prefix": "{*",
-              "suffix": "*}"
             },
             "html": {
               "prefix": "<!--",
@@ -138,7 +148,13 @@
           "when": "editorTextFocus",
           "command": "extension.pasteUri",
           "group": "uriLinker@2"
+        },
+        {
+          "when": "editorTextFocus",
+          "command": "extension.formatUriAsLink",
+          "group": "uriLinker@3"
         }
+        
       ]
     }
 
