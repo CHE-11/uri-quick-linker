@@ -36,7 +36,11 @@ Then run ```vsce package``` to create a .vsix file. You can then install this fi
 
 
 ## Limitations
-The links don't change their references when the referenced file is moved, edited, renamed, or deleted. This is a limitation of the extension. Maybe at some point I would like to make it watch for changes and update the links accordingly. But for now, it is what it is.
+The links don't change their references when the referenced file is moved, edited, renamed, or deleted. This is a limitation of the extension. Maybe at some point I would like to make it watch for changes and update the links accordingly. 
+
+The links are also absolute, so for distributed projects, the links will not work. For me, this works just fine as I setup all projects to use the exact same paths across my 4 computers. But it would be nice to have a way to make the links relative for others to use. 
+
+But for now, it is what it is.
 
 
 ## Acknowlegements
